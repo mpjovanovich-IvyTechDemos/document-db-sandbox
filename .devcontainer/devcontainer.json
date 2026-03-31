@@ -1,0 +1,33 @@
+// Taken from: https://github.com/microsoft/vscode-remote-try-python
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
+	"postCreateCommand": "pip3 install -r requirements.txt",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vsliveshare.vsliveshare"
+			],
+			"settings": {
+				"debug.inlineValues": false,
+        		"editor.inlayHints.enabled": "off",
+				"terminal.integrated.suggest.enabled": false,
+				
+                "chat.disableAIFeatures": true,
+                "editor.formatOnSave": true,
+                "editor.inlineSuggest.enabled": false,
+                "github.copilot.enable": {
+                    "*": false
+                }
+            }
+		}
+	}
+}
